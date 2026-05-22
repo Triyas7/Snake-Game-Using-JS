@@ -1,0 +1,132 @@
+@import url('https://fonts.cdnfonts.com/css/gilroy-bold');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* background colors variables */
+    --bg-primary-color: #1b1b1b;
+    --bg-snake-color: #c0c0c0;
+    --bg-food-color: #ff1a1a;
+    
+    /* text color variables */
+    --text-primary-color: #d1d1d1;
+
+    /* space variables */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 40px;
+    --space-3xl: 48px;
+
+    /* border color */
+    --border-primary-color: #494949;
+
+    /* border radius */
+    --border-radius-xs: 4px;
+    --border-radius-sm: 8px;
+    --border-radius-md: 16px;
+    --border-radius-lg: 24px;
+    --border-radius-xl: 32px;
+    --border-radius-2xl: 40px;
+    --border-radius-3xl: 48px;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+html {
+    background-color: var(--bg-primary-color);
+    color: var(--text-primary-color);
+    font-family: 'Gilroy', sans-serif;
+}
+
+main, section {
+    width: 100%;
+    height: 100%;
+}
+
+section {
+    padding: var(--space-2xl);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: var(--space-lg);
+}
+
+section .infos{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info{
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--border-primary-color);
+    border-radius: var(--border-radius-sm);
+}
+
+.board{
+    border: 1px solid var(--border-primary-color);
+    flex-grow: 1;
+    display: grid;
+    overflow: hidden;
+}
+
+.block{
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--border-primary-color);
+}
+
+.snake{
+    background-color: var(--bg-snake-color);
+}
+
+.food{
+    background-color: var(--bg-food-color);
+}
+
+/* Modal */
+.modal-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-lg);
+    z-index: 10;
+}
+
+.modal-overlay h1{
+    font-size: 2.5rem;
+}
+
+.modal-btn{
+    padding: var(--space-sm) var(--space-xl);
+    background-color: var(--bg-snake-color);
+    color: var(--bg-primary-color);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    font-family: 'Gilroy', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-btn:hover{
+    opacity: 0.85;
+}
