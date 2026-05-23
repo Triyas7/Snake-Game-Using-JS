@@ -1,7 +1,7 @@
 const board = document.querySelector('.board');
 const startButton = document.querySelector('#startBtn');
 const startModal = document.querySelector('#startModal');
-const gameOverButton = document.querySelector('#restartBtn');
+const restartButton = document.querySelector('#restartBtn');
 const gameOverModal = document.querySelector('#gameOverModal');
 
 
@@ -101,6 +101,22 @@ startButton.addEventListener('click' , () =>{
         renderSnake();
     }, 300);
     startModal.setAttribute('style', 'display: none;');
+})
+
+restartButton.addEventListener('click' , () =>{
+    gameOverModal.setAttribute('style', 'display: none;');
+
+    Object.values(blocks).forEach((block) => {
+        block.classList.remove('snake', 'food');
+    })
+    
+    snake = [{ x: 2, y: 2 }];
+    food = { x: Math.floor(Math.random() * cols), y: Math.floor(Math.random() * rows) };
+    direction = 'ArrowDown';
+
+    intervalId = setInterval(() => {
+        renderSnake();
+    }, 300);
 })
 
 window.addEventListener('keydown' , (e) =>{
