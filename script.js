@@ -8,8 +8,8 @@ const scoreElement = document.querySelector('#score');
 const highScoreElement = document.querySelector('#highScore');
 const timeElement = document.querySelector('#time');
 
-const blockHeight = 50;
-const blockWidth = 50;
+const blockHeight = 20;
+const blockWidth = 20;
 
 const cols = Math.floor(board.clientWidth / blockWidth);
 const rows = Math.floor(board.clientHeight / blockHeight);
@@ -48,7 +48,6 @@ for (let row = 0; row < rows; row++) {
         const block = document.createElement('div');
         block.classList.add('block');
         board.appendChild(block);
-        block.innerText = `${col}-${row}`;
         blocks[`${col}-${row}`] = block;
     }
 }
@@ -124,7 +123,7 @@ startButton.addEventListener('click', () => {
 
     intervalId = setInterval(() => {
         renderSnake();
-    }, 300);
+    }, 100);
     startModal.setAttribute('style', 'display: none;');
 })
 
@@ -145,7 +144,7 @@ restartButton.addEventListener('click', () => {
 
     intervalId = setInterval(() => {
         renderSnake();
-    }, 300);
+    }, 100);
 })
 
 window.addEventListener('keydown', (e) => {

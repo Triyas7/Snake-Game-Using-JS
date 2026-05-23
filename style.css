@@ -9,7 +9,7 @@
 :root {
     /* background colors variables */
     --bg-primary-color: #1b1b1b;
-    --bg-snake-color: #c0c0c0;
+    --bg-snake-color: #f3f3f3;
     --bg-food-color: #ff1a1a;
     
     /* text color variables */
@@ -25,7 +25,7 @@
     --space-3xl: 48px;
 
     /* border color */
-    --border-primary-color: #494949;
+    --border-primary-color: #292929;
 
     /* border radius */
     --border-radius-xs: 4px;
@@ -83,7 +83,7 @@ section .infos{
 .block{
     width: 100%;
     height: 100%;
-    border: 1px solid var(--border-primary-color);
+    border: 0.01px solid var(--border-primary-color);
 }
 
 .snake{
